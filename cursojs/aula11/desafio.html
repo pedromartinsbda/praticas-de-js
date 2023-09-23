@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.753);
+            text-align: center;
+        }
+
+        h1 {
+            color: rgb(255, 255, 255);
+            font: normal 30pt arial;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        p {
+            color: rgb(255, 255, 255);
+            font: normal 20pt arial;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .meu-botao {
+            background-color: rgba(248, 248, 248, 0.904);
+            border: none;
+            padding: 8px;
+            color: rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .meu-botao:hover {
+            background-color: rgba(0, 0, 0, 0.336);
+            color: white;
+        }
+
+        .espaço {
+            background-color: rgba(247, 237, 237, 0.753);
+            padding: 7px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cidadania Brasileira</h1>
+    <p>Nome do país onde nasceu</p> <input type="text" class="espaço" name="pais" id="pais">
+    <input type="button" value="VER" class="meu-botao" onclick="clicar()"> 
+    <div id="res"></div>
+
+    <script>
+        function clicar() {
+            var pais = window.document.querySelector('input#pais')
+            var res = window.document.querySelector('div#res')
+            if (pais.value.toLowerCase() == 'brasil') {
+                res.innerHTML += `<p>Você é do país ${pais.value}, Voce é <strong>BRASILEIRO(A)</strong><p>`
+            } else {
+                res.innerHTML += `<p>Você é do país ${pais.value}, voce é <strong>ESTRANGEIRO(A)</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
